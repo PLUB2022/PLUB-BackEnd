@@ -1,11 +1,11 @@
 package com.plubdev.socialproject.club;
 
+import com.plubdev.socialproject.member.MemberCategory;
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,4 +16,11 @@ public class ClubCategory {
     private Long id;
 
     private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "club_id")
+    private Club club;
+
+    @OneToMany(mappedBy = "clubCategory", cascade = CascadeType.ALL)
+    private List<MemberCategory> memberCategoryList = new ArrayList<>();
 }

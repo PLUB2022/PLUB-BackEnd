@@ -1,11 +1,9 @@
 package com.plubdev.socialproject.social;
 
+import com.plubdev.socialproject.member.MemberSocial;
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -18,5 +16,11 @@ public class Review {
     private String reviewTitle;
     private String reviewContent;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_social_id")
+    private MemberSocial memberSocial;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "social_id")
+    private Social social;
 }
