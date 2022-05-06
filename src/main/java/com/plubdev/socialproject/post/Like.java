@@ -8,10 +8,11 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@Table(name="likes")
 public class Like {
 
     @GeneratedValue @Id
-    @Column(name = "like_id")
+    @Column(name = "likes_id")
     private Long id;
 
     private LocalDateTime createdAt;
