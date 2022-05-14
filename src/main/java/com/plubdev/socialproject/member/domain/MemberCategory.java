@@ -1,6 +1,7 @@
-package com.plubdev.socialproject.member;
+package com.plubdev.socialproject.member.domain;
 
 import com.plubdev.socialproject.club.ClubCategory;
+import com.plubdev.socialproject.member.domain.Member;
 import com.plubdev.socialproject.social.CategoryOne;
 import com.plubdev.socialproject.social.CategoryTwo;
 import lombok.AccessLevel;

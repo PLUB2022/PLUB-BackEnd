@@ -1,7 +1,7 @@
 package com.plubdev.socialproject.social;
 
-import com.plubdev.socialproject.member.Member;
-import com.plubdev.socialproject.member.MemberSocial;
+import com.plubdev.socialproject.member.domain.Member;
+import com.plubdev.socialproject.member.domain.MemberSocial;
 import lombok.Getter;
 
 import javax.persistence.*;

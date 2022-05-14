@@ -8,7 +8,7 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQL10Dialect
   profiles:
-    active: db
+    active: db, security
 
 server:
   port: 8080
