@@ -1,21 +1,21 @@
-package com.plubdev.socialproject.member.domain;
+package com.plubdev.socialproject.global.oauth2;
 
 import lombok.Getter;
 import org.springframework.http.HttpMethod;
 
 @Getter
 public enum LoginType {
-//    KAKAO(
-//            "kakao",
-//                    "https://kapi.kakao.com/v2/user/me",
-//            HttpMethod.GET
-//            ),
-//
-//    GOOGLE(
-//            "google",
-//                    "https://www.googleapis.com/oauth2/v3/userinfo",
-//            HttpMethod.GET
-//            ),
+    KAKAO(
+            "kakao",
+                    "https://kapi.kakao.com/v2/user/me",
+            HttpMethod.GET
+            ),
+
+    GOOGLE(
+            "google",
+                    "https://www.googleapis.com/oauth2/v3/userinfo",
+            HttpMethod.GET
+            ),
 
     NAVER(
             "naver",

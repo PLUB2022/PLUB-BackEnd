@@ -1,6 +1,7 @@
 package com.plubdev.socialproject.member.domain;
 
 import com.plubdev.socialproject.club.Club;
+import com.plubdev.socialproject.global.oauth2.LoginType;
 import com.plubdev.socialproject.notification.Notification;
 import com.plubdev.socialproject.post.Comment;
 import com.plubdev.socialproject.post.Like;
@@ -79,7 +80,7 @@ public class Member {
     private List<Notification> notifications = new ArrayList<>();
 
     @Builder
-    public Member(String name, String phoneNumber, String gender, String email, String ageGroup, String memberDate, String memberYear, Role role) {
+    public Member(String name, String phoneNumber, String gender, String email, String ageGroup, String memberDate, String memberYear, String loginId, LoginType loginType, Role role) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.gender = gender;
@@ -87,6 +88,15 @@ public class Member {
         this.ageGroup = ageGroup;
         this.memberDate = memberDate;
         this.memberYear = memberYear;
+        this.loginId = loginId;
+        this.loginType = loginType;
         this.role = role;
     }
+
+//    @Builder
+//    public Member(String loginId, LoginType loginType,  Role role) {
+//        this.loginId = loginId;
+//        this.loginType = loginType;
+//        this.role = role;
+//    }
 }
