@@ -1,4 +1,4 @@
-package com.plubdev.socialproject.member;
+package com.plubdev.socialproject.member.domain;
 
 import com.plubdev.socialproject.club.Club;
 import com.plubdev.socialproject.notification.Notification;
@@ -6,9 +6,7 @@ import com.plubdev.socialproject.post.Comment;
 import com.plubdev.socialproject.post.Like;
 import com.plubdev.socialproject.post.Post;
 import com.plubdev.socialproject.social.Social;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -27,14 +25,25 @@ public class Member {
     private String name;
     private String phoneNumber;
     private String gender;
+    private String email;
+    private String ageGroup;
+    private String memberDate;
+    private String memberYear;
+    private String loginId;
 
     @ElementCollection
     private List<String> taste = new ArrayList<>();
 
     private LocalDateTime createdAt;
 
-    private String memberDate;
     private String description;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+
+    @Enumerated(EnumType.STRING)
+    private LoginType loginType;
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Post> posts = new ArrayList<>();
@@ -69,4 +78,15 @@ public class Member {
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Notification> notifications = new ArrayList<>();
 
+    @Builder
+    public Member(String name, String phoneNumber, String gender, String email, String ageGroup, String memberDate, String memberYear, Role role) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.gender = gender;
+        this.email = email;
+        this.ageGroup = ageGroup;
+        this.memberDate = memberDate;
+        this.memberYear = memberYear;
+        this.role = role;
+    }
 }

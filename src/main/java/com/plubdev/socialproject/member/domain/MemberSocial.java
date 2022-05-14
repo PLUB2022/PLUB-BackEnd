@@ -1,4 +1,4 @@
-package com.plubdev.socialproject.member;
+package com.plubdev.socialproject.member.domain;
 
 import com.plubdev.socialproject.social.Review;
 import com.plubdev.socialproject.social.Social;
