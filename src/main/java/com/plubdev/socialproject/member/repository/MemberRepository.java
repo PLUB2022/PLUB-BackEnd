@@ -1,6 +1,6 @@
 package com.plubdev.socialproject.member.repository;
 
-import com.plubdev.socialproject.member.domain.LoginType;
+import com.plubdev.socialproject.global.oauth2.LoginType;
 import com.plubdev.socialproject.member.domain.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
